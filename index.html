@@ -11,7 +11,7 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="container">
+			<div class="container" style="margin: 20px auto;">
 				<img src="https://www.4yousee.com.br/wp-content/uploads/2014/07/logonova.png" title="Logo 4YouSee" alt="Logo 4YouSee" class="pull-left hidden-xs hidden-sm">
 				<img src="https://www.4yousee.com.br/wp-content/uploads/2014/07/logonova.png" title="Logo 4YouSee" alt="Logo 4YouSee" class="center-block hidden-md hidden-lg hidden-xl">
 				<h3 class="text-success text-center">// DESAFIO DESENVOLVIMENTO 4YOUSEE //</h3>
@@ -22,16 +22,20 @@
 				<div class="container-fluid">
 					<div class="navbar-form navbar-right">
 						<div class="form-group">
-							<select class="form-control" id="filter">
+							<select class="form-control" id="filter" onchange="$('#contents').html(build_filter_list(this.value))">
 								<option value="">Filtro</option>
-								<option value="type">Type</option>
 								<option value="category">Category</option>
+								<option value="type">Type</option>
 							</select>
 						</div> 
 						<div class="form-group">
-							<input type="text" id="content" class="form-control" placeholder="Valor">
+							<select id="contents" class="form-control">
+								<option value="">Valor</option>
+							</select>
 						</div>
-						<button class="btn btn-default" onclick="requestMedia($('#filter').val(), $('#content').val())">Buscar</button>
+						<div class="form-group">
+							<button class="btn btn-primary" onclick="requestMedia($('#filter').val(), $('#contents').val())">Buscar</button>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -52,26 +56,15 @@
 
 			request('https://private-7cf60-4youseesocialtest.apiary-mock.com/timeline', {json: true}, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					var data = body;
+					if (filter && content) {
+						var data = filter_response(body, filter, content);
+					} else {
+						var data = body;	
+					}
 
-					console.log(JSON.stringify(response.headers));
-					for (index in data) {	
-						var obj = data[index];					
-						var media = new Media(obj);
-
-						var card = '<div class="col-md-4 col-sm-12 col-lg-4">'+
-						'<div class="thumbnail">'+
-						'<a href="'+media.file+'" target="_blank">'+
-						'<img src="'+media.thumbnail+'" alt="'+media.name+'" class="img-thumbnail" style="width: 100%;">'+
-						'</a>'+
-						'<div class="caption">'+			
-						'<p><strong>Type:</strong> '+media.type+'</p>'+
-						'<p><strong>Description:</strong> '+media.description+'</p>'+
-						'</div>'+
-						'</div>'+
-						'</div>';
-
-						$('#cards').append(card);
+					for (index in data) {
+						var obj = data[index];	
+						$('#cards').append(build_media_list(obj));
 					}
 				}
 			});
