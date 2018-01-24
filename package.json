@@ -1,0 +1,25 @@
+{
+  "name": "desafio-4yousee",
+  "version": "1.0.0",
+  "description": "Processo seletivo Desenvolvimento",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahcjs/desafio-4yousee.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "api",
+    "rest"
+  ],
+  "author": "Sarah Carolina Silva <sarah.cjs@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarahcjs/desafio-4yousee/issues"
+  },
+  "homepage": "https://github.com/sarahcjs/desafio-4yousee#readme"
+}
