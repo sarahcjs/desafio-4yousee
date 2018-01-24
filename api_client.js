@@ -29,12 +29,12 @@
  function build_media_list(obj) {
  	var media = new Media(obj);
 
- 	var card = '<div class="col-md-4 col-sm-12 col-lg-4">'+
- 	'<div class="thumbnail">'+
+ 	var card = '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-bottom: 5px; display: flex;">'+
+ 	'<div class="thumbnail" style="display: flex; flex-direction: column; width: 100%">'+
  	'<a href="'+media.file+'" target="_blank">'+
- 	'<img src="'+media.thumbnail+'" alt="'+media.name+'" class="img-thumbnail" style="width: 100%;">'+
+ 	'<img src="'+media.thumbnail+'" alt="'+media.name+'" class="img-thumbnail img-responsive" style="width: 100%;">'+
  	'</a>'+
- 	'<div class="caption">'+			
+ 	'<div class="caption">'+
  	'<p><strong>Type:</strong> '+media.type+'</p>'+
  	'<p><strong>Description:</strong> '+media.description+'</p>'+
  	'</div>'+
