@@ -4,74 +4,44 @@ Projeto desenvolvido como parte do processo seletivo para o time de Desenvolvime
 
 ## Iniciando
 
-Essas instruções vão te dar uma cópia do projeto e em pleno funcionamento em sua máquina local com objetivo de ser testado. 
+Essas instruções vão te orientar a ter uma cópia do projeto em pleno funcionamento em sua máquina local para realizar testes. 
 
 
 ### Pré-requisitos
 
-What things you need to install the software and how to install them
+* Ter o [npm.js](https://www.npmjs.com) instalado;
+* Ter o NW.js instalado.
 
-```
-Give examples
-```
 
 ### Instalação
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Clone o projeto:
 
 ```
-Give the example
+git clone https://github.com/sarahcjs/desafio-4yousee.git 
 ```
 
-And repeat
+Instale as dependências:
 
 ```
-until finished
+cd /caminho/para/o/app
+npm install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Na pasta do App execute o .exe ou arquivo binário do NW.js
 
 ```
-Give an example
+/caminho/para/o/nw .
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Construído com
 
-* [NW.js](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [PHP](https://maven.apache.org/) - Linguagem de Backend
-* [Boostrap 3](https://rometools.github.io/rome/) - Framework de Frontend
+* [Node.js](https://nodejs.org)
+* [NW.js](http://nwjs.io/) - Ferramenta que permite chamar módulos do Node diretamente do DOM
+* [Bootstrap 3](https://getbootstrap.com/docs/3.3/) - Framework de Frontend
 
 
 ## Autora
 
-* **Sarah Carolina J. Silva** - *Initial work* - [sarahcjs](https://github.com/sarahcjs)
-
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
+* **Sarah Carolina J. Silva** - [sarahcjs](https://github.com/sarahcjs)
